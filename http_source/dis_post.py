@@ -30,7 +30,7 @@ def writecsv(writed,filename):
 # for i in range(500):
 #req = urllib.request.Request(url='http://202.120.36.29:10080', data=b'00001561,77B3BE94,7906CD45,', method='POST')
 def post(name):
-    req = urllib.request.Request(url='http://202.120.36.29:10080', data=bytes(name), method='POST')
+    req = urllib.request.Request(url='http://202.120.36.29:10080', data=bytes(name,encoding='utf-8'), method='POST')
     res = urllib.request.urlopen(req)
     response = res.read()
     clusters = cpickle.loads(response)
